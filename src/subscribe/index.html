@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../../img/favicon.ico">
 
     <title>Glocal</title>
 
@@ -44,10 +44,7 @@
 
     <main role="main">
 
-      <section id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        </ol>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="first-slide" src="../../img/background.jpg" alt="First slide" style="width: 100%; height: auto">
@@ -56,15 +53,13 @@
                 <h1 style="font-size: 3rem !important">Promote international brands</h1>
                 <h1 style="font-size: 3rem !important">Be a trendsetter and</h1>
                 <h1 style="font-size: 3rem !important">Earn money</h1>
-                <center><a class="btn btn-lg btn-primary" href="#" role="button" style="margin-top: 5% !important" data-toggle="modal" data-target="#subscribe">JOIN US TODAY</a></center>
-                <a href="#section2">
-                  <center><img src="../../img/scroll.png" style="margin-top: 10rem;"></center>
-                </a>
+                <center><a href="" class="btn btn-lg btn-primary" role="button" style="margin-top: 5% !important" data-toggle="modal" data-target="#subscribe">JOIN US TODAY</a></center>
+                <center><a href="#works"><img src="../../img/scroll.png" style="margin-top: 10rem;"></a></center>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <div class="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -77,16 +72,16 @@
                 <!-- Email -->
                 <input type="email" id="defaultSubscriptionFormEmail" class="form-control mb-4" placeholder="E-mail">
                 <!-- Sign in button -->
-                <button class="btn btn-info btn-block" type="submit" onclick="success_subscribe()">Sign in</button>
+                <button class="btn btn-info btn-block" type="submit" onclick="success_subscribe()">Sign up</button>
             </form>
           </div>
         </div>
       </div>
 
-      <section id='section2'>
+      <div id='works'>
         <h2 align="middle">How it works</h2>
         <p style="text-align: center;margin-left: 15rem;margin-right: 15rem;margin-top: 1rem; margin-bottom: 3rem">We connect global businesses to influencers who are willing to market their products through social media platform.</p>
-      </section>
+      </div>
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -162,21 +157,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script src="../../js/src/pop.js"></script>
     <script src="../../dist/js/sweetalert.js"></script>
     <script type="text/javascript">
-      $(function() {
-        $('a[href*=#]').on('click', function(e) {
-          e.preventDefault();
-          $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-        });
-      });
+      function success_subscribe() {
+        swal("Thanks for signing up!", "We shall get back to you soon.", "success");
+        $('#subscribe').modal('hide');
+      }
     </script>
   </body>
 </html>
