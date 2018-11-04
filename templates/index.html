@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/css/main.css" rel="stylesheet">
@@ -73,19 +73,27 @@
             <div class="modal-content">
                 <form class="text-center border border-light p-5" id="myForm" method="post">
                     <p class="h4 mb-4">Subscribe</p>
-                    <p>Join our mailing list, we will provide our application via your email.</p>
-                    <!-- Name -->
-                    <input type="text" id="name" name="name" class="form-control mb-4"
-                           placeholder="Name">
+                    <p>Join our mailing list, we will provide details via your email.</p>
                     <!-- Email -->
                     <input type="email" id="email" name="email" class="form-control mb-4"
                            placeholder="E-mail">
+                    <!-- Country -->
+                    <input type="text" id="country" name="country" class="form-control mb-4"
+                           placeholder="Country">
                     <!-- Name -->
+                    <i class="fas fa-ghost"></i>
+                    <select class="form-control mb-4">
+                        <option>Perfered Social Media Platform</option>
+                        <option>Facebook</option>
+                        <option>Instagram</option>
+                        <option>Youtube</option>
+                        <option>Wechat</option>
+                    </select>
                     <input type="text" id="facebook" name="facebook" class="form-control mb-4"
-                           placeholder="Facebook Account">
+                           placeholder="User Name">
                     <!-- Email -->
-                    <input type="text" id="instagram" name="instagram" class="form-control mb-4"
-                           placeholder="Instagram Account">
+                    <input type="text" id="followers" name="followers" class="form-control mb-4"
+                           placeholder="Number of followers">
                     <!-- Sign in button -->
                     <button id="myFormSubmit" class="btn btn-info btn-block" type="submit">Sign up</button>
                 </form>
@@ -130,8 +138,8 @@
                     <img class="rounded" src="../static/img/s3.png" alt="Generic placeholder image" width="140"
                          height="140">
                     <h3>Market products</h3>
-                    <p style="font-size: 14px">Once connected with the global brands start marketing their products at
-                        your onw free time.</p>
+                    <p style="font-size: 14px">Once connected with the global brands, start marketing their products at
+                        your own free time.</p>
                 </div>
             </div><!-- /.col-lg-3 -->
             <div class="col-lg-3">
@@ -206,6 +214,10 @@
                 swal(data.reason, "Please check your input.", "error");
             }
             });
+      $("#email").val("");
+      $("#facebook").val("");
+      $("#followers").val("");
+      $("#check").val("");
     });
     $('#messageSubmit').click(function(e){
       e.preventDefault();

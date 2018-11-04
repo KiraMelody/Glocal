@@ -35,6 +35,7 @@ def mainpage():
 
 @app.route('/sign', methods = ['GET', 'POST'])
 def sign():
+	print g.cursor.execute("SELECT MAX(id) FROM user").fetchall()
 	total_user_num = int(g.cursor.execute("SELECT MAX(id) FROM user").fetchall()[0][0]) + 1
 	id = '0' * (5 - len(str(total_user_num))) + str(total_user_num)
 	email = request.args.get("email")
@@ -60,4 +61,4 @@ def sign():
 	return jsonify({'status': 'success'})
 
 if __name__ == '__main__':
-	app.run('0.0.0.0', '5000')
+	app.run()
